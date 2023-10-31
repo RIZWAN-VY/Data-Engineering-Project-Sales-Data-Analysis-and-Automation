@@ -17,3 +17,17 @@ from datetime import datetime
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 from pyspark.sql import SparkSession
+
+
+default_arg ={
+    'owner':'Rizwan',
+    'start_date':datetime(2023,10,24)
+}
+
+dag = DAG(
+    'Sales_Data_Analysis_Automation',
+    default_args = default_arg,
+    description = 'Sales Data Analysis using Spark SQL and automation with airflow',
+    schedule_interval = None,
+    catchup = False
+)
