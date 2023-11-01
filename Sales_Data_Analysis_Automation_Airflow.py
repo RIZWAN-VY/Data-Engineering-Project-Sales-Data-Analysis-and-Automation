@@ -72,3 +72,14 @@ hive_table_creation_task = BashOperator(
     bash_command = hive_table_creation_cmd,
     dag = dag
 )
+
+# 4. upload the data from HDFS to Hive table 
+load_data_HDFS_to_Hive_cmd = """
+hive -e "LOAD DATA INPATH '/Sales_Data_Analysis_and_Automation/Sales_Data.csv' INTO TABLE sales_data;"
+"""
+
+load_data_HDFS_to_Hive_task = BashOperator(
+    task_id ='load_data_from_HDFS_to_sales_data_table_Hive',
+    bash_command = load_data_HDFS_to_Hive_cmd,
+    dag = dag
+)
