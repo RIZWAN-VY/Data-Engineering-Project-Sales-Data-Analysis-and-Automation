@@ -31,3 +31,12 @@ dag = DAG(
     schedule_interval = None,
     catchup = False
 )
+
+# 1. create a folder in HDFS
+folder_creation_cmd_HDFS = "hadoop fs -mkdir /Sales_Data_Analysis_and_Automation"
+
+create_folder_HDFS_task = BashOperator(
+    task_id = 'create_folder_in_HDFS',
+    bash_command = folder_creation_cmd_HDFS,
+    dag = dag
+)
