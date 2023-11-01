@@ -49,3 +49,26 @@ upload_data_HDFS_task = BashOperator(
     bash_command = upload_data_cmd_HDFS,
     dag = dag
 )
+
+# 3. create a table in hive which is compactable with the data
+hive_table_creation_cmd = """
+hive -e "CREATE TABLE sales_data (
+    dte STRING,
+    product STRING,
+    category STRING,
+    sales_rep STRING,
+    city STRING,
+    no_of_units INT,
+    price DOUBLE,
+    amount DOUBLE
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+TBLPROPERTIES ('skip.header.line.count'='1');"
+"""
+
+hive_table_creation_task = BashOperator(
+    task_id = 'hive_table_creation',
+    bash_command = hive_table_creation_cmd,
+    dag = dag
+)
