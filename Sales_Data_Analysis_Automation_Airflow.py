@@ -40,3 +40,12 @@ create_folder_HDFS_task = BashOperator(
     bash_command = folder_creation_cmd_HDFS,
     dag = dag
 )
+
+# 2. upload the downloaded data to the folder created in HDFS
+upload_data_cmd_HDFS = "hadoop fs -put /home/rizwan/Downloads/Sales_Data.csv /Sales_Data_Analysis_and_Automation"
+
+upload_data_HDFS_task = BashOperator(
+    task_id = 'upload_data_to_HDFS',
+    bash_command = upload_data_cmd_HDFS,
+    dag = dag
+)
