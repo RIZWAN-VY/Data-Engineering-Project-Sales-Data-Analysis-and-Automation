@@ -90,3 +90,18 @@ spark_hive_connection = SparkSession.builder \
                         .config("spark.sql.warehouse.dir", "/user/hive/warehouse") \
                         .enableHiveSupport() \
                         .getOrCreate()
+
+
+# Function and Task for finding Sales Statistics :
+def sales_statistics():
+    data = spark_hive_connection.sql("SELECT * FROM default.sales_data")
+    statistics = data.describe(["no_of_units", "price", "amount"])
+    statistics.show()
+    # Save the analyzed data in ORC format
+    statistics.write.orc("/home/rizwan/Desktop/Sales_Data_Insight/Sales_Statistics_orc")
+
+sales_statistics_task = PythonOperator(
+    task_id = 'calculating_sales_statistics',
+    python_callable = sales_statistics,
+    dag=dag
+)
