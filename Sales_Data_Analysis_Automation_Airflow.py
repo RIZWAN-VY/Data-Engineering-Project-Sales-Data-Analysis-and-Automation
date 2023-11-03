@@ -105,3 +105,16 @@ sales_statistics_task = PythonOperator(
     python_callable = sales_statistics,
     dag=dag
 )
+
+# Top Product by Sales :
+def top_product():
+    product_sales = spark_hive_connection.sql("SELECT product,SUM(no_of_units) AS total_units,SUM(price) AS total_price,SUM(amount) AS product_sales FROM default.sales_data GROUP BY product ORDER BY product_sales DESC")
+    product_sales.show()
+    # Save the analyzed data in ORC format
+    product_sales.write.orc("/home/rizwan/Desktop/Sales_Data_Insight/product_sales_orc")
+
+top_product_task = PythonOperator(
+    task_id = 'top_selling_product',
+    python_callable = top_product,
+    dag=dag
+)
