@@ -83,3 +83,10 @@ load_data_HDFS_to_Hive_task = BashOperator(
     bash_command = load_data_HDFS_to_Hive_cmd,
     dag = dag
 )
+
+# 5.connecting Hive and Spark and doing Analysis 
+spark_hive_connection = SparkSession.builder \
+                        .appName("sales_data_analysis_using_apache_spark_sql") \
+                        .config("spark.sql.warehouse.dir", "/user/hive/warehouse") \
+                        .enableHiveSupport() \
+                        .getOrCreate()
