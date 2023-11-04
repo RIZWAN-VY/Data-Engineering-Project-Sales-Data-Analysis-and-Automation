@@ -166,3 +166,8 @@ upload_data_insight_HDFS_task = BashOperator(
     bash_command = upload_data_insight_cmd_HDFS,
     dag = dag
 )
+
+# Task Dependencies :
+
+create_folder_HDFS_task >> upload_data_HDFS_task >> hive_table_creation_task >> load_data_HDFS_to_Hive_task \
+>> [sales_statistics_task, top_product_task, top_product_category_task, best_sales_rep_task,sales_by_city_task] >> upload_data_insight_HDFS_task
