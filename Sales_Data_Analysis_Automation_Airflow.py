@@ -144,3 +144,16 @@ best_sales_rep_task = PythonOperator(
     python_callable = best_sales_rep,
     dag=dag
 )
+
+# Sales by city :
+def sales_by_city():
+    sales_by_city = spark_hive_connection.sql("SELECT city, SUM(amount) AS totalsales_by_city FROM default.sales_data GROUP BY city ORDER BY totalsales_by_city DESC")
+    sales_by_city.show()
+    # Save the analyzed data in ORC format
+    sales_by_city.write.orc("/home/rizwan/Desktop/Sales_Data_Insight/sales_by_city_orc")
+
+sales_by_city_task = PythonOperator(
+    task_id = 'top_sales_by_cities',
+    python_callable = sales_by_city,
+    dag=dag
+)
