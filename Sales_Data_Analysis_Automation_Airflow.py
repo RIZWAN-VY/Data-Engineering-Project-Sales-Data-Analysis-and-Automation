@@ -157,3 +157,12 @@ sales_by_city_task = PythonOperator(
     python_callable = sales_by_city,
     dag=dag
 )
+
+# 6. upload data insight to HDFS
+upload_data_insight_cmd_HDFS = 'hadoop fs -put /home/rizwan/Desktop/Sales_Data_Insight /Sales_Data_Analysis_and_Automation'
+
+upload_data_insight_HDFS_task = BashOperator(
+    task_id = 'upload_data_insight_to_HDFS',
+    bash_command = upload_data_insight_cmd_HDFS,
+    dag = dag
+)
