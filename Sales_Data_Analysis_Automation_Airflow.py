@@ -131,3 +131,16 @@ top_product_category_task = PythonOperator(
     python_callable = top_product_category,
     dag=dag
 )
+
+# Top Sales Representitive :
+def best_sales_rep():
+    sale_rep_totalsales = spark_hive_connection.sql("SELECT sales_rep, SUM(amount) AS sale_rep_totalsales FROM default.sales_data GROUP BY sales_rep ORDER BY sale_rep_totalsales DESC")
+    sale_rep_totalsales.show()
+    # Save the analyzed data in ORC format
+    sale_rep_totalsales.write.orc("/home/rizwan/Desktop/Sales_Data_Insight/sale_rep_totalsales_orc")
+
+best_sales_rep_task = PythonOperator(
+    task_id = 'top_performing_sales_rep',
+    python_callable = best_sales_rep,
+    dag=dag
+)
