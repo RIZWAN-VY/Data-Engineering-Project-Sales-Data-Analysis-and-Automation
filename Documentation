@@ -51,3 +51,12 @@ spark = SparkSession.builder.appName("Sales_Data_Analytics") \
 # config  = Set Hive warehouse directory
 # enableHiveSupport = Enable Hive support
 
+
+* Analysed the data using Apache Spark SQL and find insight like
+   *, Sales Statistics
+   *, Top selling Product
+   *, Top selling product Category
+   *, Best performing sales representitive
+   *, Sales by city
+   
+   saved these insight in the file "Sales_Data_Insight"
