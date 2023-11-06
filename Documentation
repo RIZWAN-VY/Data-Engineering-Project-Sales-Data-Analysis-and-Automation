@@ -60,3 +60,15 @@ spark = SparkSession.builder.appName("Sales_Data_Analytics") \
    *, Sales by city
    
    saved these insight in the file "Sales_Data_Insight"
+   
+-----------------
+
+* uploaded the insight into HDFS
+
+hadoop fs -put /home/rizwan/Desktop/Sales_Data_Insight /Sales_Data_Analysis_and_Automation
+  
+-----------------
+
+Automated the entire process using Apache Airflow
+
+file = Sales_Data_Analysis_Automation_Airflow.py
