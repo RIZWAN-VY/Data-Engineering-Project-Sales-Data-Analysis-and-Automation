@@ -6,3 +6,11 @@
 
 downloaded data from kaggle
 data = Sales_Data.csv
+
+* upload data to hadoop HDFS:
+
+commands :
+hadoop fs -mkdir /Sales_Data_Analysis_and_Automation
+hadoop fs -put /home/rizwan/Downloads/Sales_Data.csv /Sales_Data_Analysis_and_Automation
+hadoop fs -cat /Sales_Data_Analysis_and_Automation/Sales_Data.csv
+
