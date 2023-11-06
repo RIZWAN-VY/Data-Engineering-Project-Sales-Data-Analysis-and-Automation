@@ -1,0 +1,8 @@
+ PROJECT DOCUMENTATION 
+ 
+ Steps :
+ 
+ * Load a csv file of ur choice preferable from kaggle to hadoop :-
+
+downloaded data from kaggle
+data = Sales_Data.csv
