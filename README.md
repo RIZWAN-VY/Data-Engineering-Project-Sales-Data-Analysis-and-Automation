@@ -11,3 +11,7 @@ End to end Data Engineering and Ana;ysis of Sales Data using Big Data Technologi
 * __Data Engineering  | ETL Data Pipeline  |  Data Analysis__
 * __Big Data Technologies : Apache Hadoop | Apache Hive | Apache Spark | Apache Spark SQL | Apache Airflow__
 * __Data Visualization : Power BI__
+
+### Dashboard Image
+
+![Sales_Dashboard_image](https://github.com/RIZWAN-VY/Data-Engineering-Project-Sales-Data-Analysis-and-Automation/assets/131337205/18b0f5db-6e9c-42e2-9fb3-19f497d3367a)
