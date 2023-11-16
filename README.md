@@ -1,6 +1,6 @@
 # Data Engineering Project: Sales Data Analysis and Automation
 
-End to end Data Engineering and Ana;ysis of Sales Data using Big Data Technologies
+## End to end Data Engineering and Ana;ysis of Sales Data using Big Data Technologies
 
 ### Overview
 * Developed and implemented a data pipeline to Extract, Transform and Load (ETL) sales data from HDFS to Hive using Apache Spark SQL.
