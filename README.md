@@ -13,9 +13,7 @@
 * __Data Visualization : Power BI__
 
 ### Dashboard Image
-
 ![Sales_Dashboard_image](https://github.com/RIZWAN-VY/Data-Engineering-Project-Sales-Data-Analysis-and-Automation/assets/131337205/18b0f5db-6e9c-42e2-9fb3-19f497d3367a)
 
 ### Airflow Automation Image
-
 ![Airflow_Automation_image](https://github.com/RIZWAN-VY/Data-Engineering-Project-Sales-Data-Analysis-and-Automation/assets/131337205/dd7d1124-5caa-4448-8425-e986c142b98b)
