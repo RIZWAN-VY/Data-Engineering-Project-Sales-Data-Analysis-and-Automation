@@ -12,6 +12,9 @@
 * __Big Data Technologies : Apache Hadoop | Apache Hive | Apache Spark | Apache Spark SQL | Apache Airflow__
 * __Data Visualization : Power BI__
 
+## WORKFLOW ETL Pipeline
+![workflow](https://github.com/RIZWAN-VY/Data-Engineering-Project-Sales-Data-Analysis-and-Automation/assets/131337205/9d8d111a-3bea-4096-8c4b-9037962f9902)
+
 ### Dashboard Image
 ![Sales_Dashboard_image](https://github.com/RIZWAN-VY/Data-Engineering-Project-Sales-Data-Analysis-and-Automation/assets/131337205/18b0f5db-6e9c-42e2-9fb3-19f497d3367a)
 
